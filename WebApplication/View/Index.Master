@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="WebApplication.View.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Home</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="~/Styles/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <section>
+                <nav>
+                    <div >
+                        <ul> 
+                            <li>
+                                <asp:PlaceHolder ID="menuPlaceholder" runat="server"></asp:PlaceHolder>
+                                <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="ButtonLogout_Click" />
+                                <p>
+                                   <strong>LoggedIn as:</strong>
+                                   <asp:Label ID="LabelRole" runat="server"></asp:Label>
+                                </p>
+                                <p><asp:Label ID="currentTimeLabel" runat="server" ClientIDMode="Static"></asp:Label></p>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </section>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

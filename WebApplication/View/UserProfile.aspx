@@ -1,0 +1,42 @@
+﻿<%@ Page Title="Profile" Language="C#" MasterPageFile="~/View/Index.Master" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="WebApplication.View.UserProfile" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
+        <div>
+            <h1 id="ProfileTitleWithName">
+                <asp:Label ID="LabelUserName" runat="server" Text=""></asp:Label>
+            
+            </h1>
+            <h2>
+                <asp:Label ID="LabelUserRole" runat="server" Text=""></asp:Label>
+            </h2>
+        </div>
+        <div>
+            <div>
+                <asp:Button ID="ButtonEditProfile" runat="server" Text="Edit Profile" OnClick="ButtonEditProfile_Click" />
+                <div>
+                    <asp:Label ID="LabelEditInfo" runat="server" Text="Info: "></asp:Label><br />
+                </div>
+            </div>
+            <br />
+            <div>
+                <asp:Label ID="IdLabelUsername" runat="server" Text="Username: "></asp:Label>
+                <asp:TextBox ID="TextBoxUserName" runat="server" Enabled="false" AutoCompleteType="Disabled" OnTextChanged="TextBoxUserName_TextChanged" AutoPostBack="true"></asp:TextBox>
+            </div>
+            <div>
+                <asp:Label ID="LabelEmail" runat="server" Text="Email: "></asp:Label>
+                <asp:TextBox ID="TextBoxEmail" runat="server" AutoCompleteType="Disabled" Enabled="false" OnTextChanged="TextBoxEmail_TextChanged" AutoPostBack="true" ></asp:TextBox>
+            </div>
+            <div>
+                <asp:Label ID="Label" runat="server" Text="Gender: "></asp:Label><br />
+                <asp:RadioButton id="RadioButtonMan" Text="Man" Checked="False" Enabled="false" GroupName="RadioGroupGender" runat="server" /><br />
+                <asp:RadioButton id="RadioButtonWoman" Text="Woman" Checked="false" Enabled="false"  GroupName="RadioGroupGender" runat="server" /><br />
+            </div>
+            <br />
+            <div>
+                <asp:Button ID="ButtonSaveProfile" runat="server" Text="Save Profile" OnClick="ButtonSaveProfile_Click" Enabled="false" Visible="false"/>
+            </div>
+        </div>
+    </div>
+</asp:Content>

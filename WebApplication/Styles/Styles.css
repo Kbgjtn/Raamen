@@ -1,0 +1,39 @@
+﻿body {
+
+}
+
+﻿#GridViewCustomers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#GridViewCustomers th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+#GridViewCustomers td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin: 4px;
+}
+
+
+#GridViewCustomers tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+#GridViewCustomers tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+
+#GridViewCustomers td:nth-child(2),
+#GridViewCustomers td:nth-child(5) {
+    text-align: center;
+}
