@@ -31,8 +31,6 @@ namespace WebApplication.View
 
             User userloggedIn = UserController.Login(username, password);
 
-
-
             bool isSetCookies = RememberMeCheckBox.Checked;
 
             if (userloggedIn != null)
@@ -46,10 +44,18 @@ namespace WebApplication.View
                     roleCookie.Expires = DateTime.Now.AddHours(24);
                     Response.SetCookie(uidCookie);
                     Response.SetCookie(roleCookie);
+                }else
+                {
+                    StoreSession(userloggedIn.Id);
                 }
 
                 Response.Redirect("/View/Home.aspx");
             }
+        }
+
+        protected void StoreSession(int userId)
+        {
+            HttpContext.Current.Session["uid"] = userId;
         }
     }
 }
