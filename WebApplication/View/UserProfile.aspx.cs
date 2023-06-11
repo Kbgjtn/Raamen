@@ -32,6 +32,17 @@ namespace WebApplication.View
             {
                 TextBoxUserName.Text = user.Username;
                 TextBoxEmail.Text = user.Email;
+
+                string gender = user.Gender;
+
+                if(gender == "man")
+                {
+                    RadioButtonMan.Checked = true;
+                }
+                else if(gender == "woman")
+                {
+                    RadioButtonWoman.Checked = true;
+                }
             }
         }
 
@@ -39,6 +50,10 @@ namespace WebApplication.View
         {
             TextBoxUserName.Enabled = true;
             TextBoxEmail.Enabled = true;
+
+            LabelPassword.Visible = true;
+            TextBoxPassword.Enabled = true;
+            TextBoxPassword.Visible = true;
 
             RadioButtonWoman.Enabled = true;
             RadioButtonMan.Enabled = true;
@@ -51,31 +66,50 @@ namespace WebApplication.View
 
         protected void ButtonSaveProfile_Click(object sender, EventArgs e)
         {
+            var uid = Request.Cookies["uid"];
+            int userId = int.Parse(uid.Value);
+            User user = UserController.GetUserById(userId);
+
             string new_username = TextBoxUserName.Text;
             string new_email = TextBoxEmail.Text;
+            string input_password = TextBoxPassword.Text;
+            string curr_password = user.Password;
+
             string new_gender = UserValidator.CheckGender(RadioButtonMan.Checked, RadioButtonWoman.Checked);
-            var uid = Request.Cookies["uid"];
 
             if (uid == null)
             {
                 Response.Redirect("/Pages/Login.aspx");
             }
 
-            int userId = int.Parse(uid.Value);
 
-            bool isUpdated = UserController.Update(userId, new_username, new_email, new_gender);
+            //bool isUpdated = UserController.Update(userId, new_username, new_email, new_gender);
 
-            if (isUpdated == false)
+            string isUpdated = UserController.UpdateUser(userId, new_username, new_email, new_gender, input_password, curr_password);
+
+            if(!(isUpdated == "updated"))
             {
-                LabelEditInfo.Text = "Info: Cannot updated your profile!";
-                return;
+                LabelEditInfo.Text = isUpdated;
             }
             else
             {
                 LabelEditInfo.Text = "Info: Successfuly updated your profile!";
                 HandleEditModeInput();
-                return;
             }
+
+            //    Update(userId, new_username, new_email, new_gender);
+
+            //if (isUpdated == false)
+            //{
+            //    LabelEditInfo.Text = "Info: Cannot updated your profile!";
+            //    return;
+            //}
+            //else
+            //{
+            //    LabelEditInfo.Text = "Info: Successfuly updated your profile!";
+            //    HandleEditModeInput();
+            //    return;
+            //}
         }
 
         protected void HandleEditModeInput()
@@ -100,6 +134,11 @@ namespace WebApplication.View
         protected void TextBoxEmail_TextChanged(object sender, EventArgs e)
         {
             string new_email = TextBoxUserName.Text;
+        }
+
+        protected void TextBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            string input_password = TextBoxPassword.Text;
         }
     }
 }
