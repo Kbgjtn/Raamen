@@ -115,3 +115,37 @@ ul {
     flex: 1;
 }*/
 
+.manage-ramen-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*    height: 70vh;*/
+    text-align: center;
+}
+
+.box-view-ramen{
+/*    width: 80%;*/
+}
+
+.ramenGV {
+    display: inline-flex;
+    margin-top: 1rem;
+}
+
+.header-long-GV{
+    width: 300px;
+}
+
+.header-medium-GV {
+    width: 100px;
+}
+
+.header-short-GV{
+    width: 50px;
+}
+
+.item-GV{
+    text-align: left;
+    margin-left: 10px;
+}
