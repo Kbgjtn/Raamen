@@ -81,12 +81,12 @@ namespace WebApplication.View.Ramen
 
             if (isDeletedRamen != false)
             {
-                Label1.Text = "Info: Ramen with ID: " + ramenId + " successfuly deleted!";
+                Label1.Text = "Ramen with ID: " + ramenId + " successfuly deleted!";
                 BindRamenData(); return;
             }
             else
             {
-                Label1.Text = "Info: Ramen with ID: " + ramenId + " cannot be deleted!";
+                Label1.Text = "Ramen with ID: " + ramenId + " cannot be deleted!";
                 BindRamenData(); return;
             }
         }

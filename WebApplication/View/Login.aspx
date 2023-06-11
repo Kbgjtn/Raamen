@@ -5,24 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
+    <link href="../Styles/Styles.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="login-page">
             <div>
-                <h1>Login To your account!</h1>
+                <h1>Login to your account!</h1>
             </div>
-            <div>
+            <div class="textInput">
                 <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
+                <br />
                 <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox>
             </div>
 
-             <div>
+             <div class="textInput">
                 <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
+                 <br />
                 <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password"></asp:TextBox>
             </div>
 
-            <div>
+            <div class="textInput">
                 <asp:CheckBox ID="RememberMeCheckBox" Checked="true" runat="server" Text="Remember Me"></asp:CheckBox>
             </div>
 

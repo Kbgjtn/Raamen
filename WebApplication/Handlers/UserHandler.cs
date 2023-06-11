@@ -16,6 +16,12 @@ namespace WebApplication.Handlers
             UserRepository.Insert(user);
         }
 
+        // ini timi
+        public static string updateUser(int id, string new_username, string new_email, string new_gender)
+        {
+            return UserRepository.UpdateUser(id, new_username, new_email, new_gender);
+        }
+
         public static bool UpdateUser(int id, string new_username, string new_email, string new_gender)
         {
             return UserRepository.Update(id, new_username, new_email, new_gender);

@@ -16,6 +16,25 @@ namespace WebApplication.Repository
             db.SaveChanges();
         }
 
+        // ini timi
+        public static string UpdateUser(int id, string new_username, string new_email, string new_gender)
+        {
+            User userUpdate = GetUserById(id);
+
+            if (userUpdate != null)
+            {
+                userUpdate.Username = new_username;
+                userUpdate.Email = new_email;
+                userUpdate.Gender = new_gender;
+                db.SaveChanges();
+                return "updated";
+            }
+            else
+            {
+                return "fail update";
+            }
+        }
+
         public static bool Update(int id, string username, string email, string gender)
         {
             User user = GetUserById(id);

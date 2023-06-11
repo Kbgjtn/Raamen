@@ -1,5 +1,4 @@
 ﻿body {
-
 }
 
 ﻿#GridViewCustomers {
@@ -36,4 +35,117 @@
 #GridViewCustomers td:nth-child(2),
 #GridViewCustomers td:nth-child(5) {
     text-align: center;
+}
+
+h1.headerNav {
+    float: left !important;
+    margin: 0px;
+    height: 32px;
+}
+
+.btnNav {
+    display: flex;
+    justify-content: end;
+}
+
+.btnNav a {
+    height: 2rem;
+    margin-left: 10px;
+}
+
+hr {
+    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+
+ul {
+    margin-top: 0px;
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.textInput {
+    margin-bottom: 10px;
+}
+
+.register-page, .profile-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*    height: 70vh;*/
+    text-align: center;
+}
+
+.thin-error {
+    font-size: smaller;
+}
+
+.box-register {
+    margin-bottom: 10px;
+    width: 310px;
+/*    word-break: break-all;*/
+}
+
+/*.box-info, .box-form {
+    width: 310px
+}
+
+.label-info{*/
+/*    width: 310px;*/
+/*word-break: break-all;
+}*/
+
+/*.box-register#genderAndRole {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-register .gender, .role{
+    flex: 1;
+}*/
+
+.manage-ramen-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*    height: 70vh;*/
+    text-align: center;
+}
+
+.box-view-ramen{
+/*    width: 80%;*/
+}
+
+.ramenGV {
+    display: inline-flex;
+    margin-top: 1rem;
+}
+
+.header-long-GV{
+    width: 300px;
+}
+
+.header-medium-GV {
+    width: 100px;
+}
+
+.header-short-GV{
+    width: 50px;
+}
+
+.item-GV{
+    text-align: left;
+    margin-left: 10px;
 }

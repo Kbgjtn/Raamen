@@ -11,29 +11,27 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    <section>
-                <nav>
-                    <div >
-                        <ul> 
-                            <li>
-                                <asp:PlaceHolder ID="menuPlaceholder" runat="server"></asp:PlaceHolder>
-                                <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="ButtonLogout_Click" />
-                                <p>
-                                   <strong>LoggedIn as:</strong>
-                                   <asp:Label ID="LabelRole" runat="server"></asp:Label>
-                                </p>
-                                <p><asp:Label ID="currentTimeLabel" runat="server" ClientIDMode="Static"></asp:Label></p>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-            </section>
-
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="nav">
+            <h1 class="headerNav">RAAMEN</h1>
+            <div class="btnNav">
+                <ul> 
+                    <li>
+                        <asp:PlaceHolder ID="menuPlaceholder" runat="server"></asp:PlaceHolder>
+                        <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="ButtonLogout_Click" />
+                        <p>
+                            <strong>LoggedIn as:</strong>
+                            <asp:Label ID="LabelRole" runat="server"></asp:Label>
+                        </p>
+                        <p><asp:Label ID="currentTimeLabel" runat="server" ClientIDMode="Static"></asp:Label></p>
+                    </li>
+                </ul>
+            </div>
+            <hr />
         </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
     </form>
 </body>
 </html>
