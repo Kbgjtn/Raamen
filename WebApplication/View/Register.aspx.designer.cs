@@ -33,15 +33,6 @@ namespace WebApplication.View
         protected global::System.Web.UI.WebControls.Label Label;
 
         /// <summary>
-        /// labelUsernameError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelUsernameError;
-
-        /// <summary>
         /// username control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace WebApplication.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
+
+        /// <summary>
+        /// labelUsernameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelUsernameError;
 
         /// <summary>
         /// labelEmail control.
@@ -60,15 +60,6 @@ namespace WebApplication.View
         protected global::System.Web.UI.WebControls.Label labelEmail;
 
         /// <summary>
-        /// labelEmailError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelEmailError;
-
-        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace WebApplication.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+
+        /// <summary>
+        /// labelEmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelEmailError;
 
         /// <summary>
         /// genderLabel control.
@@ -141,15 +141,6 @@ namespace WebApplication.View
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// labelPasswordError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelPasswordError;
-
-        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -157,6 +148,15 @@ namespace WebApplication.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
+
+        /// <summary>
+        /// labelPasswordError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelPasswordError;
 
         /// <summary>
         /// Label4 control.
@@ -168,15 +168,6 @@ namespace WebApplication.View
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// labelConfirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelConfirmPassword;
-
-        /// <summary>
         /// confirmPassword control.
         /// </summary>
         /// <remarks>
@@ -184,6 +175,15 @@ namespace WebApplication.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox confirmPassword;
+
+        /// <summary>
+        /// labelConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelConfirmPassword;
 
         /// <summary>
         /// handleRegister control.

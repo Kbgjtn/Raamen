@@ -30,11 +30,17 @@ namespace WebApplication.View
 
         protected void handleRegister_Click(object sender, EventArgs e)
         {
+
+
+
             string userName = username.Text;
             string email = emailTextBox.Text;
             string gender = UserValidator.CheckGender(RadioButtonMan.Checked, RadioButtonWoman.Checked);
             string password = confirmPassword.Text;
             string role = UserValidator.CheckUserRole(RadioButtonCustomer.Checked, RadioButtonStaff.Checked);
+
+            // buat check email udah terdaftar oleh orang lain atau belum
+            string msg = UserValidator.CheckEmail(email);
 
             if (UserValidator.CheckIsEmailValid(email) == false)
             {
