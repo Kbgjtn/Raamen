@@ -20,7 +20,7 @@
                 <br/>
                 <asp:TextBox ID="username" runat="server" onCheckedChanged="usernameInput_CheckedChanged" Checked="true"></asp:TextBox>
                 <br/>
-                <asp:Label CssClass="thin-error" ID="labelUsernameError" runat="server" Text="The username must be 5 to 10 alphabetic characters of length."></asp:Label>
+                <asp:Label CssClass="thin-error" ID="labelUsernameError" runat="server" Text=""></asp:Label>
             </div>
 
             <div class="box-register">
@@ -28,7 +28,7 @@
                 <br/>
                 <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
                 <br/>
-                <asp:Label CssClass="thin-error" ID="labelEmailError" runat="server" Text="The email address must be using '.com'!"></asp:Label>
+                <asp:Label CssClass="thin-error" ID="labelEmailError" runat="server" Text=""></asp:Label>
             </div>
 
             <div class="box-register">
@@ -48,7 +48,7 @@
                 <br/>
                 <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
                 <br/>
-                <asp:Label CssClass="thin-error" ID="labelPasswordError" runat="server" Text="password is required!"></asp:Label>
+                <asp:Label CssClass="thin-error" ID="labelPasswordError" runat="server" Text=""></asp:Label>
             </div>
 
             <div class="box-register">
@@ -56,7 +56,7 @@
                 <br/>
                 <asp:TextBox ID="confirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                 <br/>
-                <asp:Label CssClass="thin-error" ID="labelConfirmPassword" runat="server" Text="password must match!"></asp:Label>
+                <asp:Label CssClass="thin-error" ID="labelConfirmPassword" runat="server" Text=""></asp:Label>
             </div>
 
             <div>
