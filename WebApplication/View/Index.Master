@@ -16,7 +16,9 @@
             <div class="btnNav">
                 <ul> 
                     <li>
+                        <asp:HyperLink ID="HyperLinkHome" href="/View/Home.aspx" runat="server">Home</asp:HyperLink>
                         <asp:PlaceHolder ID="menuPlaceholder" runat="server"></asp:PlaceHolder>
+                        <asp:HyperLink ID="HyperLinkProfile" href="/View/UserProfile.aspx" runat="server">Profile</asp:HyperLink>
                         <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="ButtonLogout_Click" />
                         <p>
                             <strong>LoggedIn as:</strong>

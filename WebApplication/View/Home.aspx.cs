@@ -15,9 +15,9 @@ namespace WebApplication.View
         {
             var uid = Request.Cookies["uid"];
             var rid = Request.Cookies["rid"];
-            if (uid == null)
+            if (uid == null && rid == null)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/View/Login.aspx");
             }
 
             if (!IsPostBack)
@@ -31,13 +31,13 @@ namespace WebApplication.View
 
                     if (rid.Value.Equals("Staff"))
                     {
-                        LoadCustomerData("Customer");
+                        LoadUserData("Customer");
                         return;
                     }
 
                     if (rid.Value.Equals("Admin"))
                     {
-                        LoadCustomerData("Staff");
+                        LoadUserData("Staff");
                         return;
                     }
 
@@ -45,12 +45,26 @@ namespace WebApplication.View
             }
         }
 
-        private void LoadCustomerData(string role)
+        private void LoadUserData(string role)
         {
-            List<User> customers = UserController.GetAllUserByRole(role);
+            List<User> users = UserController.GetAllUserByRole(role);
 
-            GridViewCustomers.DataSource = customers;
-            GridViewCustomers.DataBind();
+            if (users.Count > 0)
+            {
+                GridViewCustomers.DataSource = users;
+                GridViewCustomers.DataBind();
+            } else
+            {
+                if (role.Equals("Staff"))
+                {
+                    LblNoRecords.Text = "No staffs records found.";
+                } else
+                {
+                    LblNoRecords.Text = "No users records found.";
+                }
+                
+                LblNoRecords.Visible = true;
+            }
         }
     }
 }

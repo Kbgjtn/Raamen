@@ -90,24 +90,23 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Styles\Styles.css" />
-    <Content Include="View\Admin\Index.aspx" />
     <Content Include="View\History\Detail.aspx" />
     <Content Include="View\History\Index.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\Login.aspx" />
-    <Content Include="View\Order\Cart.aspx" />
-    <Content Include="View\Order\Index.aspx" />
-    <Content Include="View\Order\Queue.aspx" />
+    <Content Include="View\Ramen\Index.aspx" />
     <Content Include="View\Ramen\InsertRamen.aspx" />
     <Content Include="View\Ramen\ManageRamen.aspx" />
     <Content Include="View\Ramen\UpdateRamen.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\Report\Index.aspx" />
-    <Content Include="View\Staff\Index.aspx" />
+    <Content Include="View\Transaction\Cart.aspx" />
+    <Content Include="View\Transaction\Queue.aspx" />
     <Content Include="View\UserProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\RamenController.cs" />
@@ -116,6 +115,7 @@
     <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handlers\RoleHandler.cs" />
+    <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Handlers\RamenHandler.cs" />
     <Compile Include="Model\Detail.cs">
@@ -159,13 +159,6 @@
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Utills\CartItem.cs" />
     <Compile Include="Utills\UserValidator.cs" />
-    <Compile Include="View\Admin\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Admin\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="View\History\Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,26 +194,12 @@
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Order\Cart.aspx.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Order\Cart.aspx.designer.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Order\Index.aspx.cs">
+    <Compile Include="View\Ramen\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Order\Index.aspx.designer.cs">
+    <Compile Include="View\Ramen\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Order\Queue.aspx.cs">
-      <DependentUpon>Queue.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Order\Queue.aspx.designer.cs">
-      <DependentUpon>Queue.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Ramen\InsertRamen.aspx.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
@@ -257,12 +236,19 @@
     <Compile Include="View\Report\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="View\Transaction\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Staff\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="View\Transaction\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Queue.aspx.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Queue.aspx.designer.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>

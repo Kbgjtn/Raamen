@@ -18,21 +18,17 @@
                 <br />
                 <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox>
             </div>
-
              <div class="textInput">
                 <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
                  <br />
                 <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password"></asp:TextBox>
             </div>
-
             <div class="textInput">
                 <asp:CheckBox ID="RememberMeCheckBox" Checked="true" runat="server" Text="Remember Me"></asp:CheckBox>
             </div>
-
             <div>
                 <asp:Label ID="errTxt" runat="server" Text=""></asp:Label>
             </div>
-
             <div>
                 <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click1" />
             </div>

@@ -17,8 +17,7 @@ namespace WebApplication.View
 
             if (uid != null)
             {
-                if (!String.IsNullOrEmpty(uid.Value))
-                {
+                if (!String.IsNullOrEmpty(uid.Value)) {
                     Response.Redirect("/View/Home.aspx");
                 }
             }
@@ -37,40 +36,27 @@ namespace WebApplication.View
 
             if (userloggedIn != null)
             {
+                HttpCookie uidCookie = new HttpCookie("uid", userloggedIn.Id.ToString());
+                HttpCookie roleCookie = new HttpCookie("rid", userloggedIn.Role.Name);
 
                 if (isSetCookies)
                 {
-                    HttpCookie uidCookie = new HttpCookie("uid", userloggedIn.Id.ToString());
-                    uidCookie.Expires = DateTime.Now.AddHours(24);
-                    HttpCookie roleCookie = new HttpCookie("rid", userloggedIn.Role.Name);
-                    roleCookie.Expires = DateTime.Now.AddHours(24);
-                    Response.SetCookie(uidCookie);
-                    Response.SetCookie(roleCookie);
-                }else
-                {
-                    StoreSession(userloggedIn.Id);
+                    uidCookie.Expires = DateTime.Now.AddDays(1);
+                    roleCookie.Expires = DateTime.Now.AddDays(1);
+                    
+                }else {
+                    uidCookie.Expires = DateTime.Now.AddMinutes(30);
+                    roleCookie.Expires = DateTime.Now.AddMinutes(30);
                 }
 
+                Response.SetCookie(uidCookie);
+                Response.SetCookie(roleCookie);
                 Response.Redirect("/View/Home.aspx");
             } else
             {
-                if (username.Equals(""))
-                {
-                    errTxt.Text = "username must be filled";
-                }
-                else if (password.Equals(""))
-                {
-                    errTxt.Text = "password must be filled";
-                } else
-                {
-                    errTxt.Text = "user not found!";
-                }
+                errTxt.Text = "email or password is incorrect, please try again!";
             }
         }
 
-        protected void StoreSession(int userId)
-        {
-            HttpContext.Current.Session["uid"] = userId;
-        }
     }
 }
