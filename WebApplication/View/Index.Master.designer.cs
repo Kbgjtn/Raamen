@@ -33,6 +33,15 @@ namespace WebApplication.View
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// HyperLinkHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkHome;
+
+        /// <summary>
         /// menuPlaceholder control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace WebApplication.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder menuPlaceholder;
+
+        /// <summary>
+        /// HyperLinkProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkProfile;
 
         /// <summary>
         /// ButtonLogout control.

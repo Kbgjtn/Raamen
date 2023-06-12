@@ -13,22 +13,6 @@ namespace WebApplication.View.Ramen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            var uid = Request.Cookies["uid"];
-            var role = Request.Cookies["rid"];
-
-            if (uid == null && role == null)
-            {
-                Response.Redirect("/View/Login.aspx");
-                return;
-            }
-
-            if (uid.Value != null && role.Value.Equals("Customer"))
-            {
-                Response.Redirect("/View/Home.aspx");
-            }
-
-
             if (!IsPostBack)
             {
                 BindRamenData();

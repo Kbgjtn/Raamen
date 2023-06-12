@@ -14,26 +14,11 @@ namespace WebApplication.View.Ramen
         private int _ramenId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            var uid = Request.Cookies["uid"];
-            var role = Request.Cookies["rid"];
-
-            if (uid == null && role == null)
-            {
-                Response.Redirect("Login.aspx");
-                return;
-            }
-
-            if (uid.Value != null && role.Value.Equals("Customer"))
-            {
-                Response.Redirect("/Pages/Home.aspx");
-            }
-
             string ramenName = Request.QueryString["RamenName"];
             LabelRamenNameToBeUpdate.Text = ramenName;
             string ramenId = Request.QueryString["RamenId"];
 
-            if (ramenId == null)
-            {
+            if (ramenId == null) {
                 LabelRamenIdNotValid.Text = "Ramen with ID: " + ramenId + " is not valid!";
                 HyperLink link = new HyperLink();
                 link.Text = "Back to List!";
@@ -44,9 +29,8 @@ namespace WebApplication.View.Ramen
             }
 
             this._ramenId = int.Parse(ramenId);
-            if (!IsPostBack)
-            {
 
+            if (!IsPostBack) {
                 LoadRamenData(int.Parse(ramenId));
             }
         }

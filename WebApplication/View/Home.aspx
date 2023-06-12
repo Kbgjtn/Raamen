@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <div>
-            <h4> U logged in! </h4>
+            <h4> Successfuly logged in! </h4>
         </div>
 
         <asp:GridView ID="GridViewCustomers" runat="server" AutoGenerateColumns="false">
@@ -15,5 +15,8 @@
                 <asp:BoundField DataField="Role.Name" HeaderText="Role" />
             </Columns>
         </asp:GridView>
+        <div>
+            <asp:Label ID="LblNoRecords" runat="server" Visible="false" Text="No users records found." CssClass="empty-data-message"></asp:Label>
+        </div>
     </div>
 </asp:Content>

@@ -12,7 +12,6 @@ namespace WebApplication.Factory
         {
             Role role = new Role();
             role.Name = role_name;
-
             return role;
         }
     }

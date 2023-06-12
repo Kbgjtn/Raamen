@@ -8,12 +8,11 @@ namespace WebApplication.Factory
 {
     public class TransactionFactory
     {
-        public static Header CreateHeader(int customerId, int staffId, List<Detail> cart)
+        public static Header CreateHeader(int customerId, List<Detail> cart)
         {
             Header header = new Header
             {
                 CustomerId = customerId,
-                StaffId = staffId,
                 Date = DateTime.Now,
                 Details = cart
             };
