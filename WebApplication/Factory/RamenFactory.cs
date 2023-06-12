@@ -8,18 +8,31 @@ namespace WebApplication.Factory
 {
     public class RamenFactory
     {
-        public static Raman CreateRamen(string name, Meat meat, string broth, string price)
+
+        public static Raman InsertRamen(string name, string meatId, string broth, string price)
         {
+            Raman item = new Raman();
 
-            Raman ramen = new Raman();
+            item.Name = name;
+            item.MeatId = int.Parse(meatId);
+            item.Borth = broth;
+            item.Price = price;
 
-            ramen.Name = name;
-            ramen.Borth = broth;
-            ramen.Price = price;
-            ramen.Meat = meat;
-
-            return ramen;
+            return item;
         }
+
+        //public static Raman CreateRamen(string name, Meat meat, string broth, string price)
+        //{
+
+        //    Raman ramen = new Raman();
+
+        //    ramen.Name = name;
+        //    ramen.Borth = broth;
+        //    ramen.Price = price;
+        //    ramen.Meat = meat;
+
+        //    return ramen;
+        //}
 
         public static Meat CreateMeat(string name)
         {

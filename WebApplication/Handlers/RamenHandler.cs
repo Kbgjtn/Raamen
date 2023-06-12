@@ -10,12 +10,18 @@ namespace WebApplication.Handlers
 {
     public class RamenHandler
     {
-        public static void InsertRamen(string name, string meatName, string broth, string price)
+        public static string InsertRamen(string name, string meatId, string broth, string price)
         {
-            Meat meat = RamenFactory.CreateMeat(meatName);
-            Raman ramen = RamenFactory.CreateRamen(name, meat, broth, price);
-            RamenRepository.Insert(ramen);
+            Raman item = RamenFactory.InsertRamen(name, meatId, broth, price);
+            return RamenRepository.InsertRamen(item);
         }
+
+        //public static void InsertRamen(string name, string meatName, string broth, string price)
+        //{
+        //    Meat meat = RamenFactory.CreateMeat(meatName);
+        //    Raman ramen = RamenFactory.CreateRamen(name, meat, broth, price);
+        //    RamenRepository.Insert(ramen);
+        //}
 
         public static void InsertMeat(string name)
         {

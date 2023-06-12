@@ -117,6 +117,10 @@ namespace WebApplication.View
             TextBoxUserName.Enabled = !TextBoxUserName.Enabled;
             TextBoxEmail.Enabled = !TextBoxEmail.Enabled;
 
+            LabelPassword.Visible = !LabelPassword.Visible;
+            TextBoxPassword.Enabled = !TextBoxPassword.Enabled;
+            TextBoxPassword.Visible = !TextBoxPassword.Visible;
+
             RadioButtonWoman.Enabled = !RadioButtonWoman.Enabled;
             RadioButtonMan.Enabled = !RadioButtonMan.Enabled;
 

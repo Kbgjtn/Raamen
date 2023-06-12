@@ -10,10 +10,12 @@ namespace WebApplication.Repository
     {
         private static readonly Database1Entities db = new Database1Entities();
 
-        public static void Insert(Raman ramen)
+        public static string InsertRamen(Raman item)
         {
-            db.Ramen.Add(ramen);
+            db.Ramen.Add(item);
             db.SaveChanges();
+
+            return "success";
         }
 
         public static bool Delete(int id)

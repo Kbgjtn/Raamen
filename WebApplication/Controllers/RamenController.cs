@@ -9,10 +9,31 @@ namespace WebApplication.Controllers
 {
     public class RamenController
     {
-        public static void InsertRamen(string name, string meatName, string broth, string price)
+        public static string InsertRamen(string name, string meatId, string broth, string price)
         {
-            RamenHandler.InsertRamen(name, meatName, broth, price);
+            if (name.Equals("") || meatId.Equals("") || broth.Equals("") || price.Equals(""))
+            {
+                return "Please fill all the field";
+            }
+            else if (!name.Contains("Ramen"))
+            {
+                return "Name must contains 'Ramen'";
+            }
+            else if (meatId.Equals(""))
+            {
+                return "Meat must be selected";
+            }
+            else if(int.Parse(price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+
+            return RamenHandler.InsertRamen(name, meatId, broth, price);
         }
+        //public static void InsertRamen(string name, string meatName, string broth, string price)
+        //{
+        //    RamenHandler.InsertRamen(name, meatName, broth, price);
+        //}
 
         public static void InsertMeat(string name)
         {

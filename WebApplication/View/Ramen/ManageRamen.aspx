@@ -12,6 +12,7 @@
                 <asp:Label ID="status" runat="server" Text="Status: "></asp:Label>
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             </div>
+
             <asp:GridView CssClass="ramenGV" ID="GridViewRamen" runat="server" AutoGenerateColumns="false" OnRowDeleting="GridViewRamen_RowDeleting" DataKeyNames="Id" OnRowUpdating="GridViewRamen_RowUpdating">
                 <Columns>
                     <asp:BoundField HeaderStyle-CssClass="header-short-GV" DataField="Id" HeaderText="ID" />
@@ -24,12 +25,14 @@
                 </Columns>
                 <EmptyDataRowStyle CssClass="empty-data-row" />
             </asp:GridView>
+
             <asp:Label ID="LblNoRecords" runat="server" Visible="false" Text="No records found." CssClass="empty-data-message"></asp:Label>
 
             <div>
                 <p>Create or Add new Ramen here:</p>
                 <asp:Button ID="ButtonInsertRamen" runat="server" Text="Add Ramen" OnClick="ButtonInsertRamen_Click" />
             </div>
+
         </div>
     </div>
 </asp:Content>

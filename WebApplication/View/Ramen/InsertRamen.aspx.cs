@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication.Controllers;
+using WebApplication.Model;
 
 namespace WebApplication.View.Ramen
 {
@@ -26,28 +29,60 @@ namespace WebApplication.View.Ramen
             {
                 Response.Redirect("/View/Home.aspx");
             }
+
+            //getMeat();
+
+            if (!IsPostBack)
+            {
+                getMeat();
+            }
+
         }
 
         protected void ButtonCreateRamen_Click(object sender, EventArgs e)
         {
             string name = TextBoxRamenName.Text;
+            string meatId = ddlMeatId.Text;
+            debug.Text = meatId;
             string broth = TextBoxRamenBrothName.Text;
-            string meat = TextBoxRamenMeatName.Text;
+            //string meat = TextBoxRamenMeatName.Text;
             string price = TextBoxRamenPrice.Text;
 
-            RamenController.InsertRamen(name, meat, broth, price);
+            LabelInfoCreateRamen.Text = RamenController.InsertRamen(name, meatId, broth, price);
 
+            if (LabelInfoCreateRamen.Text.Equals("success"))
+            {
+                TextBoxRamenName.Text = "";
+                TextBoxRamenBrothName.Text = "";
+                TextBoxRamenPrice.Text = "";                
 
-            TextBoxRamenName.Text = "";
-            TextBoxRamenBrothName.Text = "";
-            TextBoxRamenMeatName.Text = "";
-            TextBoxRamenPrice.Text = "";
+                HyperLink link = new HyperLink();
+                link.Text = "See Details here!";
+                link.NavigateUrl = "ManageRamen.aspx";
+                DetailsPlaceholder.Controls.Add(link);
+            }
 
-            LabelInfoCreateRamen.Text = "Info: Successfuly add new ramen!";
-            HyperLink link = new HyperLink();
-            link.Text = "See Details here!";
-            link.NavigateUrl = "ManageRamen.aspx";
-            DetailsPlaceholder.Controls.Add(link);
+            //LabelInfoCreateRamen.Text = "Successfuly add new ramen!";
+        }
+
+        protected void getMeat()
+        {
+            List<Meat> dataMeat = RamenController.GetAllMeat();
+
+            foreach (Meat item in dataMeat)
+            {
+                ddlMeatId.Items.Add(new ListItem(item.Name, item.Id.ToString()));
+            }
+
+            //ddlMeatId.DataSource = dataMeat;
+            //ddlMeatId.DataTextField = "Name";
+            //ddlMeatId.DataValueField = "Id";
+            //ddlMeatId.DataBind();
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Ramen/ManageRamen.aspx");
         }
     }
 }

@@ -9,12 +9,15 @@ namespace WebApplication.Repository
     public class MeatRepository
     {
         private static readonly Database1Entities db = new Database1Entities();
+
+        // ini ga dipake
         public static void InsertMeat(Meat meat)
         {
             db.Meats.Add(meat);
             db.SaveChanges();
         }
 
+        // ini ga dipake
         public static bool UpdateMeat(int id, string meatName)
         {
             Meat meat = GetMeatById(id);

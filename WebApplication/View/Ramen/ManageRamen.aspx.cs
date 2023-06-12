@@ -34,10 +34,13 @@ namespace WebApplication.View.Ramen
                 BindRamenData();
             }
         }
+
+        // buat ambil data ramen untuk ditampilin
         protected void BindRamenData()
         {
             List<Raman> ramens = RamenController.GetAllRamen();
 
+            // kalau ramen nya ada, tampilin semua data ramen
             if (ramens.Count > 0)
             {
                 GridViewRamen.DataSource = ramens;
@@ -45,6 +48,7 @@ namespace WebApplication.View.Ramen
             }
             else
             {
+                // kalau ga ada, tampilin label no record nya aktifin
                 GridViewRamen.Visible = false;
                 LblNoRecords.Visible = true;
             }
