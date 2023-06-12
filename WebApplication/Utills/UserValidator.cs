@@ -68,9 +68,12 @@ namespace WebApplication.Utills
             {
                 return "man";
             }
-            else
+            else if(!man && woman)
             {
                 return "woman";
+            } else
+            {
+                return null;
             }
         }
 

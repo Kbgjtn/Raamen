@@ -13,11 +13,6 @@ namespace WebApplication.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            labelUsernameError.Text = UserValidator.RequiredInput(username.Text) ? "Username: cannot be empty!" : "Username: ok!";
-            labelEmailError.Text = UserValidator.CheckIsEmailValid(emailTextBox.Text) ? "Email: ok!" : "Email: must be using domain '.com'";
-            labelPasswordError.Text = UserValidator.RequiredInput(password.Text) ? "Password: cannot be empty!" : "Password: ok!";
-            labelConfirmPassword.Text = UserValidator.CheckPasswordMatched(password.Text, confirmPassword.Text) ? "Password is match!" : "Password: must be match!";
-
             var uid = Request.Cookies["uid"];
             if (uid != null)
             {
@@ -30,27 +25,33 @@ namespace WebApplication.View
 
         protected void handleRegister_Click(object sender, EventArgs e)
         {
-
-
-
             string userName = username.Text;
             string email = emailTextBox.Text;
             string gender = UserValidator.CheckGender(RadioButtonMan.Checked, RadioButtonWoman.Checked);
-            string password = confirmPassword.Text;
+            string password1 = confirmPassword.Text;
             string role = UserValidator.CheckUserRole(RadioButtonCustomer.Checked, RadioButtonStaff.Checked);
+
+            labelUsernameError.Text = UserValidator.RequiredInput(userName) ? "Username: cannot be empty!" : "Username: ok!";
+            labelEmailError.Text = UserValidator.CheckIsEmailValid(email) ? "Email: ok!" : "Email: must be using domain '.com'";
+            labelPasswordError.Text = UserValidator.RequiredInput(password.Text) ? "Password: cannot be empty!" : "Password: ok!";
+            labelConfirmPassword.Text = UserValidator.CheckPasswordMatched(password.Text, password1) ? "Password is match!" : "Password: must be match!";
 
             // buat check email udah terdaftar oleh orang lain atau belum
             string msg = UserValidator.CheckEmail(email);
-
-            if (UserValidator.CheckIsEmailValid(email) == false)
+            
+            if(gender == null)
+            {
+                labelOutput.Text = "Gender: must be filled";
+            } 
+            else if (UserValidator.CheckIsEmailValid(email) == false)
             {
                 labelEmailError.Text = "Email: must be using domain '.com'";
                 labelOutput.Text = "Info: email is must be using domain '.com'";
                 return;
             }
-            else
+            else if (!UserValidator.RequiredInput(username.Text) && UserValidator.CheckIsEmailValid(emailTextBox.Text) && !UserValidator.RequiredInput(password.Text) && UserValidator.CheckPasswordMatched(password.Text, confirmPassword.Text) && gender != null)
             {
-                UserController.CreateUser(userName, email, gender, password, role);
+                UserController.CreateUser(userName, email, gender, password1, role);
                 Response.Redirect("/View/Login.aspx");
             }
         }

@@ -30,6 +30,10 @@
             </div>
 
             <div>
+                <asp:Label ID="errTxt" runat="server" Text=""></asp:Label>
+            </div>
+
+            <div>
                 <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click1" />
             </div>
             <div>

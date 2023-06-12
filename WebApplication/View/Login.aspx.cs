@@ -29,6 +29,8 @@ namespace WebApplication.View
             string username = TextBoxUsername.Text;
             string password = TextBoxPassword.Text;
 
+            
+
             User userloggedIn = UserController.Login(username, password);
 
             bool isSetCookies = RememberMeCheckBox.Checked;
@@ -50,6 +52,19 @@ namespace WebApplication.View
                 }
 
                 Response.Redirect("/View/Home.aspx");
+            } else
+            {
+                if (username.Equals(""))
+                {
+                    errTxt.Text = "username must be filled";
+                }
+                else if (password.Equals(""))
+                {
+                    errTxt.Text = "password must be filled";
+                } else
+                {
+                    errTxt.Text = "user not found!";
+                }
             }
         }
 
