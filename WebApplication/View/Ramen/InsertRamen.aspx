@@ -43,9 +43,8 @@
         </div>
 
         <div>
-            <asp:Label ID="lblMeatId" runat="server" Text="Meat: "></asp:Label>
+            <asp:Label ID="lblMeatId" runat="server" Text="Ramen Meat: "></asp:Label>
             <asp:DropDownList ID="ddlMeatId" runat="server"></asp:DropDownList>
-            <asp:Label ID="debug" runat="server" Text="debug: "></asp:Label>
         </div>
 
         <div>

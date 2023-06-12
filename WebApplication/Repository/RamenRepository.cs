@@ -15,7 +15,7 @@ namespace WebApplication.Repository
             db.Ramen.Add(item);
             db.SaveChanges();
 
-            return "success";
+            return "success add: " + item.Name;
         }
 
         public static bool Delete(int id)
@@ -30,6 +30,25 @@ namespace WebApplication.Repository
             else
             {
                 return false;
+            }
+        }
+
+        public static string deleteRamen(int ramenId)
+        {
+            Raman item = db.Ramen.Find(ramenId);
+
+            if(item != null)
+            {
+                string temp = item.Name;
+
+                db.Ramen.Remove(item);
+                db.SaveChanges();
+
+                return "success deleted: " + temp;
+            }
+            else
+            {
+                return "ramen not found, please refresh your page";
             }
         }
 
@@ -56,6 +75,30 @@ namespace WebApplication.Repository
                 return true;
             }
         }
+
+        public static string updateRamen(int ramenId, string name, string meatId, string broth, string price)
+        {
+            Raman item = GetRamenById(ramenId);
+
+            if (item != null)
+            {
+                string temp = item.Name;
+
+                item.MeatId = int.Parse(meatId);
+                item.Name = name;
+                item.Borth = broth;
+                item.Price = price;
+
+                db.SaveChanges();
+
+                return "success updated: " + temp;
+            }
+            else
+            {
+                return "ramen not found";
+            }
+        }
+
         public static List<Raman> GetRamens()
         {
             return db.Ramen.ToList();

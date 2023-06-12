@@ -15,6 +15,15 @@ namespace WebApplication.View.Ramen
     {
 
         /// <summary>
+        /// infoUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label infoUpdate;
+
+        /// <summary>
         /// LabelRamenNameToBeUpdate control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace WebApplication.View.Ramen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelRamenNameToBeUpdate;
+
+        /// <summary>
+        /// infoStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label infoStatus;
 
         /// <summary>
         /// LabelInfoCreateRamen control.
@@ -96,6 +114,24 @@ namespace WebApplication.View.Ramen
         protected global::System.Web.UI.WebControls.TextBox TextBoxRamenName;
 
         /// <summary>
+        /// LabelRamenMeatName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRamenMeatName;
+
+        /// <summary>
+        /// ddlMeatId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMeatId;
+
+        /// <summary>
         /// LabelRamenBroth control.
         /// </summary>
         /// <remarks>
@@ -112,24 +148,6 @@ namespace WebApplication.View.Ramen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxRamenBrothName;
-
-        /// <summary>
-        /// LabelRamenMeatName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRamenMeatName;
-
-        /// <summary>
-        /// TextBoxRamenMeatName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRamenMeatName;
 
         /// <summary>
         /// LabelRamenPrice control.
@@ -157,5 +175,14 @@ namespace WebApplication.View.Ramen
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonUpdateRamen;
+
+        /// <summary>
+        /// btnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

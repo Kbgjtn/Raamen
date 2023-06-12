@@ -21,13 +21,13 @@ namespace WebApplication.View.Ramen
 
             if (uid == null && role == null)
             {
-                Response.Redirect("/View/Login.aspx");
+                Response.Redirect("~/View/Login.aspx");
                 return;
             }
 
             if (uid.Value != null && role.Value.Equals("Customer"))
             {
-                Response.Redirect("/View/Home.aspx");
+                Response.Redirect("~/View/Home.aspx");
             }
 
             //getMeat();
@@ -43,14 +43,13 @@ namespace WebApplication.View.Ramen
         {
             string name = TextBoxRamenName.Text;
             string meatId = ddlMeatId.Text;
-            debug.Text = meatId;
             string broth = TextBoxRamenBrothName.Text;
             //string meat = TextBoxRamenMeatName.Text;
             string price = TextBoxRamenPrice.Text;
 
             LabelInfoCreateRamen.Text = RamenController.InsertRamen(name, meatId, broth, price);
 
-            if (LabelInfoCreateRamen.Text.Equals("success"))
+            if (LabelInfoCreateRamen.Text.Contains("success"))
             {
                 TextBoxRamenName.Text = "";
                 TextBoxRamenBrothName.Text = "";

@@ -33,13 +33,22 @@ namespace WebApplication.View.Ramen
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// GridViewRamen control.
+        /// refreshBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewRamen;
+        protected global::System.Web.UI.WebControls.LinkButton refreshBtn;
+
+        /// <summary>
+        /// GridRamenGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridRamenGV;
 
         /// <summary>
         /// LblNoRecords control.

@@ -11,6 +11,8 @@ namespace WebApplication.Controllers
     {
         public static string InsertRamen(string name, string meatId, string broth, string price)
         {
+            bool isPriceString = System.Text.RegularExpressions.Regex.IsMatch(price, "[^0-9]");
+
             if (name.Equals("") || meatId.Equals("") || broth.Equals("") || price.Equals(""))
             {
                 return "Please fill all the field";
@@ -23,7 +25,11 @@ namespace WebApplication.Controllers
             {
                 return "Meat must be selected";
             }
-            else if(int.Parse(price) < 3000)
+            else if (isPriceString)
+            {
+                return "Price must be number";
+            }
+            else if (int.Parse(price) < 3000)
             {
                 return "Price must be at least 3000";
             }
@@ -45,6 +51,11 @@ namespace WebApplication.Controllers
             return RamenHandler.DeleteRamen(id);
         }
 
+        public static string deleteRamen(int ramenId)
+        {
+            return RamenHandler.deleteRamen(ramenId);
+        }
+
         public static Raman GetRamen(int id)
         {
             return RamenHandler.GetRamenById(id);
@@ -58,6 +69,34 @@ namespace WebApplication.Controllers
         public static bool UpdateRamen(int id, string name, string broth, string meat, string price)
         {
             return RamenHandler.UpdateRamen(id, name, broth, meat, price);
+        }
+
+        public static string updateRamen(int ramenId, string name, string meatId, string broth, string price)
+        {
+            bool isPriceString = System.Text.RegularExpressions.Regex.IsMatch(price, "[^0-9]");
+
+            if (name.Equals("") || meatId.Equals("") || broth.Equals("") || price.Equals(""))
+            {
+                return "Please fill all the field";
+            }
+            else if (!name.Contains("Ramen"))
+            {
+                return "Name must contains 'Ramen'";
+            }
+            else if (meatId.Equals(""))
+            {
+                return "Meat must be selected";
+            }
+            else if (isPriceString)
+            {
+                return "Price must be number";
+            }
+            else if (int.Parse(price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+
+            return RamenHandler.updateRamen(ramenId, name, meatId, broth, price);
         }
 
         public static bool UpdateMeat(int id, string name)

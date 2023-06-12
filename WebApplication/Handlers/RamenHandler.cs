@@ -43,9 +43,19 @@ namespace WebApplication.Handlers
         {
             return RamenRepository.Delete(id);
         }
+
+        public static string deleteRamen(int ramenId)
+        {
+            return RamenRepository.deleteRamen(ramenId);
+        }
         public static bool UpdateRamen(int id, string name, string broth, string meat, string price)
         {
             return RamenRepository.UpdateRamenById(id, name, broth, meat, price);
+        }
+
+        public static string updateRamen(int ramenId, string name, string meatId, string broth, string price)
+        {
+            return RamenRepository.updateRamen(ramenId, name, meatId, broth, price);
         }
 
         public static bool UpdateMeat(int id, string meatName)
