@@ -89,6 +89,8 @@ namespace WebApplication.View.Ramen
                 link.Text = "Back to List!";
                 link.NavigateUrl = "ManageRamen.aspx";
                 PlaceHolderNoRamenRecord.Controls.Add(link);
+
+                editForm();
             }
             else
             {
@@ -150,6 +152,16 @@ namespace WebApplication.View.Ramen
             {
                 ddlMeatId.Items.Add(new ListItem(item.Name, item.Id.ToString()));
             }
+        }
+
+        protected void editForm()
+        {
+            TextBoxRamenName.Enabled = false;
+            ddlMeatId.Enabled = false;
+            TextBoxRamenBrothName.Enabled = false;
+            TextBoxRamenPrice.Enabled = false;
+
+            ButtonUpdateRamen.Enabled = false;
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

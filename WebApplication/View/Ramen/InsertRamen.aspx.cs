@@ -47,6 +47,8 @@ namespace WebApplication.View.Ramen
             //string meat = TextBoxRamenMeatName.Text;
             string price = TextBoxRamenPrice.Text;
 
+            //lblMeatId.Text = meatId;
+
             LabelInfoCreateRamen.Text = RamenController.InsertRamen(name, meatId, broth, price);
 
             if (LabelInfoCreateRamen.Text.Contains("success"))

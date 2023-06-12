@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Index.Master" AutoEventWireup="true" CodeBehind="ManageRamen.aspx.cs" Inherits="WebApplication.View.Ramen.ManageRamen" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="manage-ramen-page">
@@ -34,7 +35,7 @@
                     <asp:BoundField HeaderStyle-CssClass="header-long-GV" ItemStyle-CssClass="item-GV" DataField="Name" HeaderText="Name" />
                     <asp:BoundField HeaderStyle-CssClass="header-medium-GV" ItemStyle-CssClass="item-GV" DataField="Borth" HeaderText="Broth" />
                     <asp:BoundField HeaderStyle-CssClass="header-medium-GV" ItemStyle-CssClass="item-GV" DataField="Price" HeaderText="Price" />
-                    <asp:BoundField HeaderStyle-CssClass="header-medium-GV" ItemStyle-CssClass="item-GV" DataField="Meat.Name" HeaderText="Meat Hei-Hei" />
+                    <asp:BoundField HeaderStyle-CssClass="header-medium-GV" ItemStyle-CssClass="item-GV" DataField="Meat.Name" HeaderText="Meat" />
                     <asp:ButtonField ButtonType="Button" Text="Update" CommandName="Update" />
                     <asp:ButtonField ButtonType="Button" Text="Delete" CommandName="Delete" />
                 </Columns>

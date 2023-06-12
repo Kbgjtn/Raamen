@@ -110,9 +110,11 @@ namespace WebApplication.View.Ramen
             Label1.Text = RamenController.deleteRamen(ramenId);
 
             refreshBtn.Visible = true;
+
+            
             //Label1.Text = "heihei";
 
-            //Response.Redirect("~/View/Ramen/ManageRamen.aspx");
+            Response.Redirect("~/View/Ramen/ManageRamen.aspx");
         }
 
         protected void refreshBtn_Click(object sender, EventArgs e)
