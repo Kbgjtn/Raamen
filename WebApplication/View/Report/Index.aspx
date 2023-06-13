@@ -7,6 +7,6 @@
     <div>
         <h1>Report Page</h1>
         <asp:Label ID="test" runat="server" Text="Label"></asp:Label>
-    </div>
         <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+    </div>
 </asp:Content>

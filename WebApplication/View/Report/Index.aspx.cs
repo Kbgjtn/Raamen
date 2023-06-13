@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ramen.Report;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,6 +36,7 @@ namespace WebApplication.View.Report
                 hrow["StaffId"] = x.StaffId;
                 hrow["Date"] = x.Date;
                 hrow["TotalPrice"] = totalPrice.ToString();
+                test.Text = totalPrice.ToString();
                 header.Rows.Add(hrow);
 
                 foreach (Detail y in x.Details)
