@@ -5,8 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <h1>Report Page</h1>
-        <asp:Label ID="test" runat="server" Text="Label"></asp:Label>
-    </div>
+        <h1>Report Page</h1
         <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+    </div>
 </asp:Content>
