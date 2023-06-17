@@ -10,7 +10,8 @@
             <div>
                 <h1>List Ramen</h1>
                 <asp:Label ID="status" runat="server" Text="Status: "></asp:Label>
-                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
             </div>
             <asp:GridView CssClass="ramenGV" ID="GridViewRamen" runat="server" AutoGenerateColumns="false" OnRowDeleting="GridViewRamen_RowDeleting" DataKeyNames="Id" OnRowUpdating="GridViewRamen_RowUpdating">
                 <Columns>

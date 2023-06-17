@@ -10,11 +10,11 @@ namespace WebApplication.Handlers
 {
     public class RamenHandler
     {
-        public static void InsertRamen(string name, string meatName, string broth, string price)
+        public static string InsertRamen(string name, string meatName, string broth, string price)
         {
             Meat meat = RamenFactory.CreateMeat(meatName);
             Raman ramen = RamenFactory.CreateRamen(name, meat, broth, price);
-            RamenRepository.Insert(ramen);
+            return RamenRepository.Insert(ramen);
         }
 
         public static void InsertMeat(string name)
@@ -37,7 +37,7 @@ namespace WebApplication.Handlers
         {
             return RamenRepository.Delete(id);
         }
-        public static bool UpdateRamen(int id, string name, string broth, string meat, string price)
+        public static string UpdateRamen(int id, string name, string broth, string meat, string price)
         {
             return RamenRepository.UpdateRamenById(id, name, broth, meat, price);
         }

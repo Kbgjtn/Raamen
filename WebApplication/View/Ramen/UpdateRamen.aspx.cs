@@ -62,25 +62,23 @@ namespace WebApplication.View.Ramen
             string meat = TextBoxRamenMeatName.Text;
             string price = TextBoxRamenPrice.Text;
 
-            bool isRamenUpdated = RamenController.UpdateRamen(this._ramenId, name, broth, meat, price);
-            if (isRamenUpdated != false)
+            string isRamenUpdated = RamenController.UpdateRamen(this._ramenId, name, broth, meat, price);
+            LabelRamenUpdateInfo.Text = isRamenUpdated;
+            
+            if (isRamenUpdated.Equals("success updated"))
             {
-                LabelRamenUpdateInfo.Text = "Ramen with ID: " + this._ramenId + " successfuly updated!";
                 HyperLink link = new HyperLink();
                 link.Text = "See updated ramen!";
                 link.NavigateUrl = "ManageRamen.aspx";
                 PlaceHolderNoRamenRecord.Controls.Add(link);
 
-            }
-            else
-            {
-                LabelRamenUpdateInfo.Text = "Ramen with ID: " + this._ramenId + " cannot be updated!";
+                TextBoxRamenName.Text = "";
+                TextBoxRamenBrothName.Text = "";
+                TextBoxRamenMeatName.Text = "";
+                TextBoxRamenPrice.Text = "";
+
             }
 
-            TextBoxRamenName.Text = "";
-            TextBoxRamenBrothName.Text = "";
-            TextBoxRamenMeatName.Text = "";
-            TextBoxRamenPrice.Text = "";
         }
     }
 }
