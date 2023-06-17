@@ -9,9 +9,32 @@ namespace WebApplication.Controllers
 {
     public class RamenController
     {
-        public static void InsertRamen(string name, string meatName, string broth, string price)
+        public static string InsertRamen(string name, string meatName, string broth, string price)
         {
-            RamenHandler.InsertRamen(name, meatName, broth, price);
+            bool isPriceString = System.Text.RegularExpressions.Regex.IsMatch(price, "[^0-9]");
+
+            if (name.Equals("") || meatName.Equals("")|| broth.Equals("") || price.Equals(""))
+            {
+                return "Please fill all the field";
+            }
+            else if (!name.Contains("Ramen"))
+            {
+                return "Name must contains 'Ramen'";
+            }
+            else if (meatName.Equals(""))
+            {
+                return "Meat must be selected";
+            }
+            else if (isPriceString)
+            {
+                return "Price must be number and must be at least 3000";
+            }
+            else if (int.Parse(price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+
+            return RamenHandler.InsertRamen(name, meatName, broth, price);
         }
 
         public static void InsertMeat(string name)
@@ -34,8 +57,31 @@ namespace WebApplication.Controllers
             return RamenHandler.GetMeatById(id);
         }
 
-        public static bool UpdateRamen(int id, string name, string broth, string meat, string price)
+        public static string UpdateRamen(int id, string name, string broth, string meat, string price)
         {
+            bool isPriceString = System.Text.RegularExpressions.Regex.IsMatch(price, "[^0-9]");
+
+            if (name.Equals("") || broth.Equals("") || price.Equals(""))
+            {
+                return "Please fill all the field";
+            }
+            else if (!name.Contains("Ramen"))
+            {
+                return "Name must contains 'Ramen'";
+            }
+            else if (meat.Equals(""))
+            {
+                return "Meat must be selected";
+            }
+            else if (isPriceString)
+            {
+                return "Price must be number and must be at least 3000";
+            }
+            else if (int.Parse(price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+
             return RamenHandler.UpdateRamen(id, name, broth, meat, price);
         }
 

@@ -10,16 +10,24 @@ namespace WebApplication.Repository
     {
         private static readonly Database1Entities db = new Database1Entities();
 
-        public static void Insert(Raman ramen)
+        public static string Insert(Raman ramen)
         {
             db.Ramen.Add(ramen);
             db.SaveChanges();
+
+            return "success add: " + ramen.Name;
         }
 
         public static bool Delete(int id)
         {
-            Raman ramen = db.Ramen.Where(r => r.Id == id).FirstOrDefault();
-            if (ramen != null)
+            Raman ramen = GetRamenById(id);
+            var detail = db.Details.Where(d => d.RamenId == id).FirstOrDefault();
+            
+            if (detail != null)
+            {
+                return false;
+            }
+            else if (ramen != null && detail == null)
             {
                 db.Ramen.Remove(ramen);
                 db.SaveChanges();
@@ -29,6 +37,7 @@ namespace WebApplication.Repository
             {
                 return false;
             }
+            
         }
 
         public static Raman GetRamenById(int id)
@@ -36,12 +45,12 @@ namespace WebApplication.Repository
             return db.Ramen.Find(id);
         }
 
-        public static bool UpdateRamenById(int id, string name, string broth, string meat, string price)
+        public static string UpdateRamenById(int id, string name, string broth, string meat, string price)
         {
             Raman ramen = GetRamenById(id);
             if (ramen == null)
             {
-                return false;
+                return "failed";
             }
             else
             {
@@ -51,7 +60,7 @@ namespace WebApplication.Repository
                 ramen.Meat.Name = meat;
 
                 db.SaveChanges();
-                return true;
+                return "success updated";
             }
         }
         public static List<Raman> GetRamens()

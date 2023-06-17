@@ -86,7 +86,7 @@ namespace WebApplication.View.Transaction
             if (totalCartTransaction > 0)
             {
                 LabelCartTotal.Visible = true;
-                LabelCartTotal.Text = "Total Transaction: " + totalCartTransaction;
+                LabelCartTotal.Text = "Total Transaction: Rp" + totalCartTransaction;
                 HyperLinkBackToMenu.Visible = true;
                 ButtonOrderCart.Enabled = true;
             } else

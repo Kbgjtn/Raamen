@@ -71,6 +71,7 @@ namespace WebApplication.View.Ramen
             else
             {
                 Label1.Text = "Ramen with ID: " + ramenId + " cannot be deleted!";
+                Label2.Text = "Warn: You cannot remove the the items which related to the transaction order!";
                 BindRamenData(); return;
             }
         }

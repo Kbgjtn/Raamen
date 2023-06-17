@@ -27,6 +27,7 @@ namespace WebApplication.View.Report
             var header = data.Header;
             var detail = data.Detail;
             int totalPrice = 0;
+            int temp = 0;
 
             foreach (Header x in headers)
             {
@@ -35,8 +36,6 @@ namespace WebApplication.View.Report
                 hrow["CustomerId"] = x.User.Username;
                 hrow["StaffId"] = x.StaffId;
                 hrow["Date"] = x.Date;
-                hrow["TotalPrice"] = totalPrice.ToString();
-                header.Rows.Add(hrow);
 
                 foreach (Detail y in x.Details)
                 {
@@ -49,9 +48,12 @@ namespace WebApplication.View.Report
                     drow["Quantity"] = y.Quantity;
                     drow["TotalPrice"] = (int.Parse(y.Raman.Price) * y.Quantity).ToString();
                     drow["SubTotalPrice"] = x.Details.Sum(z => int.Parse(z.Raman.Price) * z.Quantity);
-                    totalPrice += int.Parse(drow["SubTotalPrice"].ToString());
+                     temp = int.Parse(drow["SubTotalPrice"].ToString());
                     detail.Rows.Add(drow);
                 }
+                totalPrice += temp;
+                hrow["TotalPrice"] = totalPrice.ToString();
+                header.Rows.Add(hrow);
             }
 
             return data;
